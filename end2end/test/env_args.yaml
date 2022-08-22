@@ -1,0 +1,5 @@
+batch_size: 150
+epochs: 2000
+mini_batch_size_num: 6
+steps: 1500
+trajs: 1000

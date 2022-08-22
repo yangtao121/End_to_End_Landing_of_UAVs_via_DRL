@@ -1,0 +1,11 @@
+center: false
+center_adv: false
+clip_ratio: 0.01
+clip_value: true
+critic_learning_rate: 0.001
+gamma: 0.95
+lambada: 1
+policy_learning_rate: 3.0e-05
+reward_scale: false
+scale: false
+update_steps: 5

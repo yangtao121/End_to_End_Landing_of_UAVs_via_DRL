@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<robot name="cf2default">
+    <link name="base_link">
+        <inertial>
+            <mass value="0.028"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0.0 0.0"/>
+            <inertia ixx="1.359e-5" ixy="0.0" ixz="0.0" iyy="1.428e-5" iyz="0.0" izz="2.6604e-5"/>
+        </inertial>
+        <visual name="base">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="src/cf2.obj" scale="1"/>
+                <material name="base">
+                    <color rgba="1.0 0.0 0.0 1.0"/>
+                </material>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.025"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="prop0_link">
+        <inertial>
+            <origin xyz="-0.0325 -0.0325 0.0" rpy="0 0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <joint name="prop0_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="prop0_link"/>
+    </joint>
+    <link name="prop1_link">
+        <origin xyz="0.0325 -0.0325 0.0" rpy="0.0 0.0 0.0"/>
+        <inertial>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+    <joint name="prop1_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="prop1_link"/>
+    </joint>
+    <link name="prop2_link">
+        <origin xyz="0.0325 0.0325 0.0" rpy="0.0 0.0 0.0"/>
+        <inertial>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+    <joint name="prop2_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="prop2_link"/>
+        
+    </joint>
+    <link name="prop3_link">
+        <origin xyz="-0.0325 0.0325 0.0" rpy="0.0 0.0 0.0"/>
+        <inertial>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+    <joint name="prop3_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="prop3_link"/>
+        
+    </joint>
+</robot>

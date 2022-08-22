@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="Interference">
+  <link name="baseLink">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      <mass value="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.157444471397827"/>
+      <geometry>
+        <box size="0.14379987024717322 0.14841730547202578 0.01"/>
+      </geometry>
+      <material name="color">
+        <color rgba="0.7207395937221174 0.41362823204390775 0.7983841075861225 1.0"/>
+      </material>
+    </visual>
+  </link>
+</robot>

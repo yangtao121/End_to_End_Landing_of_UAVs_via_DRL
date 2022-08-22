@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="landing area">
+  <link name="baseLink">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      <mass value="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.281616076950412"/>
+      <geometry>
+        <box size="0.5479988587894913 0.5098879002429288 0.01"/>
+      </geometry>
+      <material name="color">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+</robot>

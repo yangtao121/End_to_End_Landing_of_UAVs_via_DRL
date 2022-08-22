@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<robot name="DJIf450">
+
+<link name="base_link">
+        <inertial>
+            <mass value="1.5"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <!-- <inertia ixx="0" ixy="0.0" ixz="0.0" iyy="0" iyz="0.0" izz="0"/> -->
+            <inertia ixx="1.745e-2" ixy="0.0" ixz="0.0" iyy="1.745e-2" iyz="0.0" izz="3.175e-2"/>
+        </inertial>
+        <visual name="NONE">
+            <geometry>
+                <sphere radius="0.0001"/>
+            </geometry>
+        </visual>
+       <collision>
+            <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.225" length="0.193"/>
+            </geometry>
+        </collision>
+</link>
+    <link name="body_link">
+        <inertial>
+            <mass value="0"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <inertia ixx="0" ixy="0.0" ixz="0.0" iyy="0" iyz="0.0" izz="0"/>
+            <!-- <inertia ixx="-0.01" ixy="0.0" ixz="0.0" iyy="-0.01" iyz="0.0" izz="-0.03"/> -->
+            <!-- <inertia ixx="1.745e-2" ixy="0.0" ixz="0.0" iyy="1.745e-2" iyz="0.0" izz="3.175e-2"/> -->
+        </inertial>
+        <visual name="body">
+            <geometry>
+                <mesh filename="src/model/body.obj" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="246.201e-3 -246.201e-3 -10.2e-2" rpy="0.0 -3.1415926 0.0"/>
+        </visual>
+    </link>
+
+    <joint name="body_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="body_link"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.785398150"/>
+    </joint>
+
+    <link name="prop0_link">
+    <inertial>
+        <mass value="0.0001"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <inertia ixx="1e-7" ixy="0.0" ixz="0.0" iyy="1e-7" iyz="0.0" izz="1e-7"/>
+    </inertial>
+        <visual name="prop0">
+            <geometry>
+                <mesh filename="src/model/prop1.obj" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="30.016e-3 -110.513e-3 -10.2e-2" rpy="0.0 -3.1415926 0.0"/>
+        </visual>
+    </link>
+
+    <joint name="prop0_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="prop0_link"/>
+        <origin xyz="159.7e-3 -159.7e-3 223.144e-3" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="prop1_link">
+        <inertial>
+            <mass value="0.0001"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>>
+            <inertia ixx="1e-7" ixy="0.0" ixz="0.0" iyy="1e-7" iyz="0.0" izz="1e-7"/>
+        </inertial>
+        <visual name="prop1">
+            <geometry>
+                <mesh filename="src/model/prop2.obj" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="120e-3 -10.8e-3 -10.2e-2" rpy="0.0 -3.1415926 0.0"/>
+        </visual>
+    </link>
+    <joint name="prop1_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop1_link"/>
+    <origin xyz="159.7e-3 159.7e-3 223.144e-3" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="prop2_link">
+        <inertial>
+            <mass value="0.0001"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>>
+            <inertia ixx="1e-7" ixy="0.0" ixz="0.0" iyy="1e-7" iyz="0.0" izz="1e-7"/>
+        </inertial>
+        <visual name="prop2">
+            <geometry>
+                <mesh filename="src/model/prop1.obj" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="30.016e-3 -110.513e-3 -10.2e-2" rpy="0.0 -3.1415926 0.0"/>
+        </visual>
+    </link>
+    <joint name="prop2_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop2_link"/>
+    <origin xyz="-159.7e-3 159.7e-3 223.144e-3" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0 0 1"/>
+    </joint>
+
+
+    <link name="prop3_link">
+        <inertial>
+            <mass value="0.0001"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>>
+            <inertia ixx="1e-7" ixy="0.0" ixz="0.0" iyy="1e-7" iyz="0.0" izz="1e-7"/>
+        </inertial>
+        <visual name="prop3">
+            <geometry>
+                <mesh filename="src/model/prop2.obj" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="120e-3 -10.8e-3 -10.2e-2" rpy="0.0 -3.1415926 0.0"/>
+        </visual>
+    </link>
+    <joint name="prop3_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="prop3_link"/>
+    <origin xyz="-159.7e-3 -159.7e-3 223.144e-3" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0 0 1"/>
+    </joint>
+</robot>
